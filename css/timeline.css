@@ -1,0 +1,148 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.timeline-item {
+    padding: 0 15px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+    margin-top: -5px;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline .timeline-item{
+  float:initial !important;
+}
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: #00539C;
+    z-index: 1;
+}
+
+.timeline-item.left::before {
+    top: 0;
+    right: 0;
+}
+
+.timeline-item.right::before {
+    bottom: 0;
+    left: 0;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: #00539C;
+    z-index: 1;
+}
+
+.timeline-item.left::after {
+    bottom: 0;
+    right: 0;
+}
+
+.timeline-item.right::after {
+    top: 0;
+    left: 0;
+}
+
+.timeline-item:first-child::before,
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-item .content {
+    padding: 30px;
+    background: #ffffff;
+    position: relative;
+    border-right: 5px solid #00539C;
+    border-left: 5px solid #eeeeee;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, .08);
+}
+
+.timeline-item.right .content {
+    border-right: 5px solid #eeeeee;
+    border-left: 5px solid #00539C;
+    border-radius: 0 15px 15px 0;
+}
+
+.timeline-item .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: #00539C;
+}
+
+.timeline-item .content h2 span {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px 10px;
+    color: #ffffff;
+    background: #00539C;
+}
+
+.timeline-item .content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #454545;
+}
+
+@media (max-width: 767.98px) {
+    .timeline {
+        padding-bottom: 0;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-top: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .timeline-item.right {
+        left: 0%;
+    }
+
+    .timeline-item.left::after, 
+    .timeline-item.right::after,
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+        width: 5px;
+        height: 35px;
+        left: 30px;
+    }
+    
+    .timeline-item.left .content,
+    .timeline-item.right .content {
+        border-right: 5px solid #eeeeee;
+        border-left: 5px solid #00539C;
+        border-radius: 0 15px 15px 0;
+    }
+}
