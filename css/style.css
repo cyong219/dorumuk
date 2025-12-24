@@ -227,5 +227,15 @@ section.history img{
     font-size: 18px;
     
     }
+       .home-slider h5 {
+    font-size: 14px;
+    
+    }
+    body .slider .caption {
+    
+    top:5%;
+    padding: 9px;
+    
+}
 }
 
