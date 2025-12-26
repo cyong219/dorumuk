@@ -1,6 +1,12 @@
  body{
   font-family: "Jua", cursive;
  }
+ div.chip .material-symbols-outlined
+{
+      font-size: 21px;
+    line-height: 32px;
+    padding-right: 8px;
+}
  .hiddendiv {
   display: block;
   position: absolute;
@@ -262,3 +268,58 @@ section.history img{
 }
 }
 
+section.news div.schedule{
+  max-width:480px;
+  margin:0 auto;
+}
+
+#calendar {
+  max-width:480px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  
+  font-family: sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-grid div {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 4px;
+}
+
+.day-name {
+  font-size: 12px;
+  color: #666;
+}
+
+.today {
+  background: #1976d2;
+  color: white;
+  font-weight: bold;
+}
+
+#calendar .closed {
+  background: #fbe9e7;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+#calendar .closed::after {
+  content: "휴무";
+  display: block;
+  font-size: 10px;
+}

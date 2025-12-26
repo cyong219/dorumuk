@@ -17,10 +17,12 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
   />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=timer" />
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/timeline.css"/>
     <script
   src="javascript/index.js">
+  
 </script>
     
   
@@ -69,19 +71,21 @@
 </section>
 
 <section class="news" id="news">
-     <div class="container">
-      <div class="card">
-                    <div class="card-image">
-                    <img src="img/bg_2.jpg">
-                    <span class="card-title">도루묵 소식</span>
-                    
-                    </div>
-                    <div class="card-content">
-                    <p>알 도루묵 있어요~ </p>
-                    <p>많이 방문해 주세요!</p>
-                    </div>
-                    
-                </div>
+  <div class="container">
+    
+      
+        <div class="card community">
+          <div class="card-image">
+            <img src="img/bg_2.jpg">
+            <span class="card-title">도루묵 소식</span>
+
+          </div>
+          <div class="card-content">
+            <p>알 도루묵 있어요~ </p>
+            <p>많이 방문해 주세요!</p>
+          </div>
+
+        </div>
         <!--
         <div class="card">
                     <div class="card-image">
@@ -98,9 +102,24 @@
                     
                 </div>        
         -->
+      
+      <div class="schedule">
+        <h5 class="center-align">영업 안내</h5>
+        <div class="chip">
+          <span class="material-symbols-outlined left">timer</span>13:00 ~ 21:00
+        </div>
         
-             
-     </div>
+        <div id="calendar">
+          <div class="calendar-header">
+            <button class="waves-effect waves-light btn-small" id="prev">&lt;</button>
+            <span id="monthYear"></span>
+            <button class="waves-effect waves-light btn-small" id="next">&gt;</button>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </div>
+    
+  </div>
 </section>
 <section class="center-align story" >
    <div class="container paper paper-pink">
@@ -177,7 +196,7 @@
                 <div class="content">
                     <h2><span>2004</span>도루묵 식당 이전</h2>
                     <p>개업부터 약 40년을 지켜오던 자리에서 현재 위치로 이전</p>
-                    <img class="main" src="img/bg_2.jpg">
+                    <img class="main" src="img/history_3.jpg">
                 </div>
             </div>
             <div class="timeline-item right">
@@ -206,6 +225,8 @@
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
 </script>
-
+<script
+  src="javascript/calendar.js">
+</script>
 </body>
 </html>
