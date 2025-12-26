@@ -105,7 +105,7 @@ section.news div.card>.card-image>.status img{
   bottom:inherit;
 }
 body{
-    padding-top:64px;
+    padding-top:0;
 }
 .page-footer{
     padding:20px 0;
