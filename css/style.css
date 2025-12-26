@@ -309,7 +309,10 @@ section.news div.schedule{
   
   font-family: sans-serif;
 }
-
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
 .calendar-header {
   display: flex;
   justify-content: space-between;
