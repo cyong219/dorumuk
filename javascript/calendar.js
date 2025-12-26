@@ -15,7 +15,13 @@ async function loadClosedDays() {
 function getClosedDays(year, month) {
   const sundays = [];
   //const closedDays = []; //임시 휴무 추가'2026-01-01'
-  const closedDays = []
+  const closedDays = [
+    '2026-02-17', //설 연휴
+    '2026-02-18', //설 연휴
+    '2026-09-25', //추석 연휴
+    '2026-09-26', //추석 연휴
+
+]
     
   const lastDate = new Date(year, month + 1, 0).getDate();
 
