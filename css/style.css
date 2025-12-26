@@ -71,11 +71,21 @@ section.menu img.menu{
     transparent 100%
   );
 }
+body>.content>section{
+  position: relative;
+}
 nav {
     position: fixed;
     top: 0;
     background:#0D2B45;
     z-index: 1000;
+}
+section.news img.deco.st-1{
+  bottom:0;
+  right:0;
+  max-width:1200px;
+  width:60%;
+  
 }
 section.news div.card{
     max-width:480px;
@@ -306,8 +316,10 @@ section.news div.schedule{
   max-width:480px;
   border: 1px solid #ddd;
   padding: 12px;
-  
   font-family: sans-serif;
+  
+  
+  background-color: #ffffff;
 }
 button:disabled {
   opacity: 0.3;
@@ -320,7 +332,11 @@ button:disabled {
   margin-bottom: 8px;
   font-weight: bold;
 }
+img.deco{
+  z-index:-1;
+  position:absolute;
 
+}
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
