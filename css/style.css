@@ -1,6 +1,26 @@
  body{
   font-family: "Jua", cursive;
  }
+ .slider .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 2;
+}
+.slider .indicators .indicator-item {
+    
+height: 4px;
+    width: 30px;
+    margin: 0 4px;
+    background-color: #e0e0e0;
+    border-radius: 0px;
+}
+.slider .indicators .indicator-item.active {
+    background-color: #0D2B45;
+}
  div.chip .material-symbols-outlined
 {
       font-size: 21px;
@@ -124,7 +144,15 @@ body .slider .caption {
 
 
 
+
 :root {
+   
+   --c1: #f8e4c1;
+  --c2: #2b4e72;
+  
+  --c:#0000 75%,var(--c1) 0;
+  --g1:conic-gradient(at 78% 3%,var(--c));
+  --g2:conic-gradient(at 3% 78%,var(--c));
   --pink: #efebe9;
   --pink-dark: #c2c2c2;
   --tape-gray: #dbd8be;
@@ -238,6 +266,7 @@ body .slider .caption {
   left: -4vmin;
   bottom: 0;
 }
+
 section.story>div.container div.body{
       padding: 0 12px;
 }
