@@ -1,15 +1,21 @@
 const calendarGrid = document.getElementById("calendarGrid");
 const monthYear = document.getElementById("monthYear");
+const startMonth = new Date(); // 현재 달
+startMonth.setDate(1);
+
+const endMonth = new Date();
+endMonth.setMonth(startMonth.getMonth() + 2);
+endMonth.setDate(1);
 
 let currentDate = new Date();
-async function loadClosedDays() {
-  const res = await fetch("./closed-days.txt");
-  const text = await res.text();
+function isSameOrAfter(a, b) {
+  return a.getFullYear() > b.getFullYear() ||
+    (a.getFullYear() === b.getFullYear() && a.getMonth() >= b.getMonth());
+}
 
-  return text
-    .split(/\r?\n/)
-    .map(line => line.trim())
-    .filter(Boolean);
+function isSameOrBefore(a, b) {
+  return a.getFullYear() < b.getFullYear() ||
+    (a.getFullYear() === b.getFullYear() && a.getMonth() <= b.getMonth());
 }
 
 function getClosedDays(year, month) {
@@ -91,17 +97,40 @@ function renderCalendar(date) {
 
     calendarGrid.appendChild(div);
   }
+  updateNavButtons();
+}
+function updateNavButtons() {
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  prevBtn.disabled = !isSameOrAfter(
+    new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1),
+    startMonth
+  );
+
+  nextBtn.disabled = !isSameOrBefore(
+    new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1),
+    endMonth
+  );
 }
 
 renderCalendar(currentDate);
 
-// 이전 / 다음 달
 document.getElementById("prev").onclick = () => {
-  currentDate.setMonth(currentDate.getMonth() - 1);
+  const prev = new Date(currentDate);
+  prev.setMonth(prev.getMonth() - 1);
+
+  if (!isSameOrAfter(prev, startMonth)) return;
+
+  currentDate = prev;
   renderCalendar(currentDate);
 };
-
 document.getElementById("next").onclick = () => {
-  currentDate.setMonth(currentDate.getMonth() + 1);
+  const next = new Date(currentDate);
+  next.setMonth(next.getMonth() + 1);
+
+  if (!isSameOrBefore(next, endMonth)) return;
+
+  currentDate = next;
   renderCalendar(currentDate);
 };
