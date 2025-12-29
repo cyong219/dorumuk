@@ -1,9 +1,24 @@
  body{
   font-family: "Jua", cursive;
+  background-color: #fafafa;
  }
-     body.nh {
-         padding-top: 0 !important;
-    }
+ html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body.page-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+main.content {
+  flex: 1 0 auto;
+}
+
+body.nh {
+  padding-top: 0 !important;
+}
  .slider .indicators {
     position: absolute;
     text-align: center;
@@ -57,7 +72,7 @@ content: '.';
   overflow: hidden;
 }
 .content >section:nth-child(2n+1){
-  background-color: #efebe9  ;
+  /*background-color: #efebe9  ;*/
 }
 section.menu img.menu{
       width: 300px;
@@ -88,6 +103,7 @@ section.news img.deco.st-1{
   right:0;
   max-width:1200px;
   width:60%;
+  display:none;
   
 }
 section.news div.card{
