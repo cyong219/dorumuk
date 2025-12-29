@@ -1,6 +1,9 @@
  body{
   font-family: "Jua", cursive;
  }
+     body.nh {
+         padding-top: 0 !important;
+    }
  .slider .indicators {
     position: absolute;
     text-align: center;
